@@ -1,0 +1,7 @@
+tensorflow==2.15.0
+fastapi
+uvicorn
+python-multipart
+tensorflow-serving-api
+matplotlib
+numpy==1.26.4
