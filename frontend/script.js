@@ -6,7 +6,7 @@ function getApiUrl() {
         return 'http://localhost:8000';
     }
     // For production, use the environment variable or default
-    return window.API_URL || 'https://your-render-backend.onrender.com';
+    return window.API_URL || 'https://tomato-disease-classifier-i1gi.onrender.com';
 }
 
 // DOM Elements

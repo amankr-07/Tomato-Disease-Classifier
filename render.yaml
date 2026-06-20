@@ -1,9 +1,8 @@
 services:
   - type: web
     name: tomato-disease-classifier
-    runtime: python
-    pythonVersion: 3.11.9
+    runtime: docker
     rootDir: backend
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app:app --host 0.0.0.0 --port 8000
+    dockerfilePath: Dockerfile
     plan: free
+
