@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Disease Classifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍅 Tomato Disease Classifier</h1>
+            <p class="subtitle">Upload a leaf image to identify diseases</p>
+        </header>
+
+        <main class="content">
+            <div class="upload-section">
+                <div class="upload-box" id="uploadBox">
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Drag and drop your image here or click to select</p>
+                    <input
+                        type="file"
+                        id="fileInput"
+                        accept="image/*"
+                        hidden
+                    >
+                </div>
+
+                <div class="preview-section" id="previewSection" style="display: none;">
+                    <img id="previewImage" alt="Preview" class="preview-image">
+                    <button class="btn-primary" id="predictBtn">Get Prediction</button>
+                    <button class="btn-secondary" id="resetBtn">Upload Different Image</button>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-card">
+                    <h2>Prediction Result</h2>
+
+                    <div class="main-result">
+                        <div class="disease-name" id="diseaseName"></div>
+                        <div class="confidence-container">
+                            <div class="confidence-label">
+                                Confidence: <span id="confidenceValue">0</span>%
+                            </div>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="confidenceFill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="all-predictions">
+                        <h3>All Predictions</h3>
+                        <div id="allPredictionsContainer" class="predictions-grid"></div>
+                    </div>
+
+                    <button class="btn-secondary" id="newImageBtn">Classify Another Image</button>
+                </div>
+            </div>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing image...</p>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;"></div>
+        </main>
+
+        <footer>
+            <p>Tomato Disease Classification using Deep Learning</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

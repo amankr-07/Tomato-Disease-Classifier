@@ -1,0 +1,15 @@
+{
+    "buildCommand": "echo 'Static site'",
+    "outputDirectory": ".",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ],
+    "env": {
+        "API_URL": "http://localhost:8000"
+    }
+}
